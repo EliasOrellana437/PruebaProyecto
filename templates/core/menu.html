@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>PruebaProyecto — Menú</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="page page-menu">
+  <header class="topbar">
+    <h1>PruebaProyecto</h1>
+    <div class="user">Hola, {{ username }}</div>
+  </header>
+
+  <main class="grid">
+    {% for opt in options %}
+      <a href="#" class="tile" data-slug="{{ opt.slug }}">
+        <h2>{{ opt.title }}</h2>
+        <p>{{ opt.desc }}</p>
+        <span class="badge">Próximamente</span>
+      </a>
+    {% endfor %}
+  </main>
+
+  <script src="{% static 'js/menu.js' %}"></script>
+</body>
+</html>
