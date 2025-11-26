@@ -3,25 +3,35 @@
 <head>
   {% load static %}
   <meta charset="UTF-8">
-  <title>PruebaProyecto — Menú</title>
+  <title>Proyecto SignBridge — Menú</title>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body class="page page-menu">
   <header class="topbar">
-    <h1>PruebaProyecto</h1>
+    <h1>Proyecto SignBridge</h1>
     <div class="user">Hola, {{ username }}</div>
   </header>
 
   <main class="grid">
     {% for opt in options %}
-      <a href="#" class="tile" data-slug="{{ opt.slug }}">
-        <h2>{{ opt.title }}</h2>
-        <p>{{ opt.desc }}</p>
-        <span class="badge">Próximamente</span>
-      </a>
+      {% if opt.slug == "retos-diarios" %}
+        <a href="/retos-diarios/" class="tile" data-slug="{{ opt.slug }}">
+          <h2>{{ opt.title }}</h2>
+          <p>{{ opt.desc }}</p>
+        </a>
+      {% else %}
+        <a href="#" class="tile fake-link" data-slug="{{ opt.slug }}">
+          <h2>{{ opt.title }}</h2>
+          <p>{{ opt.desc }}</p>
+          <span class="badge">Próximamente</span>
+        </a>
+      {% endif %}
     {% endfor %}
   </main>
 
-  <script src="{% static 'js/menu.js' %}"></script>
+  <!-- El script va justo antes de cerrar el body -->
+ <script src="{% static 'js/menu.js' %}?v=10"></script>
+
+
 </body>
 </html>

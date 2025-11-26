@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username', '')
@@ -16,6 +17,8 @@ def menu_view(request):
         {'slug': 'retos-diarios', 'title': 'Retos diarios', 'desc': 'Pequeños objetivos gamificados.'},
     ]
     return render(request, 'core/menu.html', {'username': username, 'options': options})
-# Create your views here.
+
 def retos_diarios_view(request):
     return render(request, 'core/retos_diarios.html')
+{'slug': 'retos-diarios', 'title': 'Retos diarios', 'desc': 'Pequeños objetivos gamificados.'},
+
