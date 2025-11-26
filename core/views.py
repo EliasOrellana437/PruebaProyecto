@@ -17,3 +17,5 @@ def menu_view(request):
     ]
     return render(request, 'core/menu.html', {'username': username, 'options': options})
 # Create your views here.
+def retos_diarios_view(request):
+    return render(request, 'core/retos_diarios.html')
