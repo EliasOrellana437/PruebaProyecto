@@ -6,8 +6,19 @@
     <title>Reto diario</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-<body>
-    <h1>Reto diario</h1>
-    <p>Este es un espacio de prueba para los retos diarios.</p>
+<body class="page page-retos">
+
+    <header class="topbar">
+        <h1>Reto diario</h1>
+        <a href="/menu/" class="btn-volver">Volver al menú</a>
+    </header>
+
+    <main class="container">
+        <section class="reto-box">
+            <h2>Tu reto de hoy</h2>
+            <p>Aquí irá el contenido dinámico del reto diario.</p>
+        </section>
+    </main>
+
 </body>
 </html>
