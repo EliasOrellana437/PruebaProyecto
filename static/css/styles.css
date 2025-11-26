@@ -30,12 +30,11 @@ input { padding: 10px 12px; border-radius: 8px; border: 1px solid #1f2937; backg
 .btn-volver {
   padding: 10px 14px;
   background: var(--accent);
-  color: #06290f;
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
-  margin-left: auto;
+  color: white; /* ← ahora el texto será blanco */
+}
+
+
+.btn-volver:hover {
+  background: #16a34a; /* un verde más oscuro al pasar el mouse */
 }
 
