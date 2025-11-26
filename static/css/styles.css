@@ -28,11 +28,10 @@ input { padding: 10px 12px; border-radius: 8px; border: 1px solid #1f2937; backg
     cursor: pointer;
 }
 .btn-volver {
-  padding: 10px 14px;
-  background: var(--accent);
-  color: white; /* ← ahora el texto será blanco */
+  color: white !important;
+  text-decoration: none;
+  font-weight: bold;
 }
-
 
 .btn-volver:hover {
   background: #16a34a; /* un verde más oscuro al pasar el mouse */
