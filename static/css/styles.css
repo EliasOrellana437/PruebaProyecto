@@ -27,11 +27,14 @@ input { padding: 10px 12px; border-radius: 8px; border: 1px solid #1f2937; backg
     pointer-events: auto !important;
     cursor: pointer;
 }
-a.btn-volver {
+
+/*  ESTILO CORRECTO DEL BOTÓN VOLVER AL MENÚ */
+header.topbar a.btn-volver {
   color: white !important;
   background: none !important;
   border: none !important;
   text-decoration: none !important;
   font-weight: bold !important;
 }
+
 
