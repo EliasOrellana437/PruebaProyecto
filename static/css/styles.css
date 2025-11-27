@@ -28,6 +28,15 @@ input { padding: 10px 12px; border-radius: 8px; border: 1px solid #1f2937; backg
     cursor: pointer;
 }
 
+/* Container amplio para menús y catálogos */
+.container-wide {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 24px;
+  background: var(--panel);
+  border-radius: 12px;
+}
+
 /*  ESTILO CORRECTO DEL BOTÓN VOLVER AL MENÚ */
 header.topbar a.btn-volver {
   color: white !important;
