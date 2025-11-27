@@ -1,19 +1,27 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>{{ titulo_pagina }}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=110">
 </head>
-<body>
-    <div class="detalle-container">
+<body class="page page-detalle-seña">
+
+    <header class="topbar">
+        <h1>{{ titulo_pagina }}</h1>
         <a href="{% url 'alfabeto' %}" class="btn-volver">← Volver al Índice</a>
-        
-        <h1>Letra: {{ letra }}</h1>
-        
-        <img src="{% static ruta_imagen %}" alt="Seña de la letra {{ letra }}">
-        
-        <p>Practica la seña de la letra **{{ letra }}**.</p>
-    </div>
+    </header>
+
+    <main class="container">
+        <div class="detalle-container">
+            <h2>Letra: {{ letra }}</h2>
+
+            <img src="{% static ruta_imagen %}" alt="Seña de la letra {{ letra }}">
+
+            <p>Practica la seña de la letra <strong>{{ letra }}</strong>.</p>
+        </div>
+    </main>
+
 </body>
 </html>

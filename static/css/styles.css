@@ -326,3 +326,36 @@ h1 {
     transform: translateY(-2px);
 }
 
+/* ============================= */
+/* Apartado: Detalle de Seña */
+/* ============================= */
+
+.page-detalle-seña .detalle-container {
+  padding: 40px;
+  background-color: var(--panel);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+.page-detalle-seña .detalle-container h2 {
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.page-detalle-seña .detalle-container img {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid var(--accent);
+  border-radius: 10px;
+  margin-bottom: 25px;
+  background: #0e1726;
+}
+
+.page-detalle-seña .detalle-container p {
+  font-size: 1.1em;
+  color: var(--muted);
+  margin-bottom: 30px;
+  text-align: center;
+}

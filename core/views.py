@@ -128,7 +128,7 @@ def alfabeto_view(request):
 # Vista 2: Muestra el detalle de una seña (la imagen)
 def detalle_seña_view(request, letra):
     # Asegúrate de que esta extensión coincida con tus archivos (ej: A.jpg)
-    ruta_imagen = f"señas/{letra}.jpg" 
+    ruta_imagen = f"img/{letra}.jpg"
     
     contexto = {
         'letra': letra,
