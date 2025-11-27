@@ -218,100 +218,86 @@ header.topbar a.btn-volver {
   font-weight: bold;
 }
 
-/* leccion_alfabeto/static/css/styles.css */
-
-/* Estilo de toda la página */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e6f0f7; /* Un azul muy claro, casi blanco */
-    color: #334; /* Gris oscuro para el texto */
-    text-align: center;
-    padding: 30px;
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* Estilo del título principal */
-h1 {
-    color: #2c3e50; /* Azul oscuro elegante */
-    margin-bottom: 50px;
-    font-size: 2.5em; /* Un poco más grande */
-    font-weight: 600; /* Menos negrita que el default */
-}
+/* Apartado: Alfabeto */
 
 /* Contenedor de las letras (grid) */
-.letras-container {
-    display: grid; /* Usamos Grid para mejor alineación */
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Columnas responsivas */
-    gap: 15px; /* Espacio entre los cuadros */
-    max-width: 960px; /* Ancho máximo para centrar */
-    margin: 0 auto; /* Centrar el contenedor */
+.page-alfabeto .letras-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 15px;
+    max-width: 960px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff; /* Fondo blanco para el contenedor */
-    border-radius: 15px; /* Esquinas redondeadas del contenedor */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada pero sutil */
+    background-color: var(--panel); /* Fondo oscuro del panel */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
 }
 
 /* Estilo de cada cuadro de letra (botón) */
-.letra-btn {
+.page-alfabeto .letra-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px; /* Ancho fijo para el cuadro */
-    height: 70px; /* Alto fijo para el cuadro */
-    border: 2px solid #a7c9db; /* Borde más suave */
-    border-radius: 10px; /* Esquinas ligeramente redondeadas */
-    background-color: #f7f9fc; /* Fondo muy claro para el botón */
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--muted); /* Borde suave */
+    border-radius: 10px;
+    background-color: #0b1220; /* Fondo oscuro del botón */
     text-decoration: none;
-    color: #34495e; /* Texto azul grisáceo */
-    font-size: 2em; /* Letra grande */
+    color: var(--text); /* Texto claro */
+    font-size: 2em;
     font-weight: bold;
-    transition: all 0.2s ease-in-out; /* Transiciones suaves para todos los cambios */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra suave para cada botón */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
-/* Efecto al pasar el ratón (hover) */
-.letra-btn:hover {
-    background-color: #d1e2ed; /* Fondo más oscuro al pasar el ratón */
-    color: #2c3e50; /* Texto un poco más oscuro */
-    transform: translateY(-5px) scale(1.05); /* Se levanta y agranda ligeramente */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más fuerte */
-    border-color: #8dbcd9; /* Borde más oscuro */
+/* Hover dinámico */
+.page-alfabeto .letra-btn:hover {
+    background-color: var(--accent); /* Verde acento */
+    color: #06290f; /* Texto oscuro para contraste */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.5); /* Sombra verde */
+    border-color: var(--accent);
 }
 
-/* Estilos para el detalle de la seña (futuro) */
-.detalle-container {
+/* Estilos para el detalle de la seña */
+.page-detalle-seña .detalle-container {
     padding: 40px;
-    background-color: #ffffff;
+    background-color: var(--panel);
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     max-width: 700px;
     margin: 50px auto;
+    display: grid;
+    gap: 20px;
 }
 
-.detalle-container h1 {
-    color: #2c3e50;
-    margin-bottom: 30px;
+.page-detalle-seña .detalle-container h2 {
+    color: var(--text);
+    margin-bottom: 20px;
 }
 
-.detalle-container img {
+.page-detalle-seña .detalle-container img {
     max-width: 100%;
     height: auto;
-    border: 5px solid #d1e2ed;
+    border: 5px solid var(--accent);
     border-radius: 10px;
     margin-bottom: 25px;
+    background: #0e1726;
 }
 
-.detalle-container p {
+.page-detalle-seña .detalle-container p {
     font-size: 1.1em;
-    color: #555;
+    color: var(--muted);
     margin-bottom: 30px;
+    text-align: center;
 }
 
-.btn-volver {
+/* Botón volver */
+header.topbar a.btn-volver {
     display: inline-block;
-    background-color: #3498db;
-    color: white;
+    background-color: var(--accent);
+    color: #06290f;
     padding: 12px 25px;
     border-radius: 8px;
     text-decoration: none;
@@ -319,7 +305,7 @@ h1 {
     transition: background-color 0.2s, transform 0.2s;
 }
 
-.btn-volver:hover {
-    background-color: #2980b9;
+header.topbar a.btn-volver:hover {
+    background-color: #16a34a; /* Verde más oscuro */
     transform: translateY(-2px);
 }
