@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ titulo }}</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=200">
+</head>
+<body class="page page-mini-juego">
+
+<header class="topbar">
+  <h1>{{ titulo }}</h1>
+  <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
+</header>
+
+<main class="container">
+  <section id="quiz-container">
+    {% for p in preguntas %}
+      <div class="quiz-item" data-respuesta="{{ p.respuesta }}">
+        <h3>{{ p.titulo }}</h3>
+        <div class="quiz-media">
+          <img src="{% static p.media %}" alt="Seña de {{ p.titulo }}">
+        </div>
+        <div class="quiz-opciones">
+          {% for opt in p.opciones %}
+            <button class="quiz-btn">{{ opt }}</button>
+          {% endfor %}
+        </div>
+        <p class="quiz-feedback"></p>
+      </div>
+    {% endfor %}
+  </section>
+</main>
+
+<script src="{% static 'js/mini_juego.js' %}?v=1"></script>
+</body>
+</html>

@@ -130,3 +130,51 @@ header.topbar a.btn-volver {
   line-height: 1.5;
 }
 
+/*aparatdo para mini juegos */
+.quiz-item {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  background: #0b1220;
+}
+
+.quiz-media {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.quiz-media img {
+  max-width: 200px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+}
+
+.quiz-opciones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.quiz-btn {
+  padding: 8px 12px;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.quiz-btn:disabled {
+  background: #1f2937;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.quiz-feedback {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+

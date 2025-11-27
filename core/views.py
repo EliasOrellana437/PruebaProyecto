@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+import random
 from django.http import Http404
 
 def login_view(request):
@@ -68,4 +69,41 @@ def frase_detalle(request, slug):
     return render(request, 'core/frase_detalle.html', {
         "frase": frase,
         "titulo": frase["titulo"],
+    })
+
+#apartado mini juego
+QUIZ_ITEMS = [
+    {
+        "slug": "a",
+        "tipo": "letra",
+        "titulo": "Letra A",
+        "media": "img/letra_a.gif",
+        "opciones": ["A", "B", "C"],
+        "respuesta": "A",
+    },
+    {
+        "slug": "gracias",
+        "tipo": "frase",
+        "titulo": "Frase: Gracias",
+        "media": "img/frase_gracias.gif",
+        "opciones": ["Hola", "Gracias", "Perdón"],
+        "respuesta": "Gracias",
+    },
+    {
+        "slug": "hola",
+        "tipo": "frase",
+        "titulo": "Frase: Hola",
+        "media": "img/frase_hola.gif",
+        "opciones": ["Hola", "Adiós", "Gracias"],
+        "respuesta": "Hola",
+    },
+    # … puedes seguir agregando letras y frases
+]
+
+def mini_juego(request):
+    # Selecciona 10 preguntas aleatorias
+    preguntas = random.sample(QUIZ_ITEMS, min(10, len(QUIZ_ITEMS)))
+    return render(request, 'core/mini_juego.html', {
+        "titulo": "Mini juego de memoria",
+        "preguntas": preguntas,
     })

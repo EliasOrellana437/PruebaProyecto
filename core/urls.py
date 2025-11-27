@@ -8,4 +8,6 @@ path('retos-diarios/', views.retos_diarios_view, name='retos_diarios'),
 
 path('frases/', views.frases_utiles, name='frases'),
     path('frases/<slug:slug>/', views.frase_detalle, name='frase_detalle'),
+
+path('mini-juego/', views.mini_juego, name='mini_juego'),
 ]

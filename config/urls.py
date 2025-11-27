@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),  # 👈 esta línea es la clave
+    path('', include('core.urls')),  # esta línea es la clave
 ]
 
