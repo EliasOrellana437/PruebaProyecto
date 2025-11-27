@@ -27,6 +27,16 @@ input { padding: 10px 12px; border-radius: 8px; border: 1px solid #1f2937; backg
     pointer-events: auto !important;
     cursor: pointer;
 }
+/* Efecto hover con sombra en tarjetas */
+.tile, .quiz-item, .reto-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tile:hover, .quiz-item:hover, .reto-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
 
 /* Container amplio para menús y catálogos */
 .container-wide {
