@@ -1,19 +1,29 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>{{ titulo_pagina }}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=110">
 </head>
-<body>
-    <h1>Selecciona una Letra para ver la Seña</h1>
-    
-    <div class="letras-container">
-        {% for letra in letras %}
-        <a href="{% url 'detalle_seña' letra=letra %}" class="letra-btn">
-            {{ letra }}
-        </a>
-        {% endfor %}
-    </div>
+<body class="page page-alfabeto">
+
+    <header class="topbar">
+        <h1>{{ titulo_pagina }}</h1>
+        <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
+    </header>
+
+    <main class="container-wide">
+        <h2>Selecciona una letra para ver la seña</h2>
+
+        <div class="letras-container grid">
+            {% for letra in letras %}
+            <a href="{% url 'detalle_seña' letra=letra %}" class="letra-btn">
+                {{ letra }}
+            </a>
+            {% endfor %}
+        </div>
+    </main>
+
 </body>
 </html>

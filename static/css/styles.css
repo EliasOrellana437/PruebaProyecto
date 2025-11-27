@@ -220,27 +220,46 @@ header.topbar a.btn-volver {
 
 /* Apartado: Alfabeto */
 
+/* Estilo de toda la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg); /* Fondo oscuro */
+    color: var(--text); /* Texto claro */
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Estilo del título principal */
+h1 {
+    color: var(--text);
+    margin-bottom: 50px;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
 /* Contenedor de las letras (grid) */
-.page-alfabeto .letras-container {
+.letras-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     gap: 15px;
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
-    background-color: var(--panel); /* Fondo oscuro del panel */
+    background-color: var(--panel); /* Panel oscuro */
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra más marcada */
 }
 
 /* Estilo de cada cuadro de letra (botón) */
-.page-alfabeto .letra-btn {
+.letra-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 70px;
     height: 70px;
-    border: 2px solid var(--muted); /* Borde suave */
+    border: 2px solid var(--muted); /* Borde tenue */
     border-radius: 10px;
     background-color: #0b1220; /* Fondo oscuro del botón */
     text-decoration: none;
@@ -251,8 +270,8 @@ header.topbar a.btn-volver {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
-/* Hover dinámico */
-.page-alfabeto .letra-btn:hover {
+/* Efecto al pasar el ratón (hover) */
+.letra-btn:hover {
     background-color: var(--accent); /* Verde acento */
     color: #06290f; /* Texto oscuro para contraste */
     transform: translateY(-5px) scale(1.05);
@@ -261,23 +280,21 @@ header.topbar a.btn-volver {
 }
 
 /* Estilos para el detalle de la seña */
-.page-detalle-seña .detalle-container {
+.detalle-container {
     padding: 40px;
     background-color: var(--panel);
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     max-width: 700px;
     margin: 50px auto;
-    display: grid;
-    gap: 20px;
 }
 
-.page-detalle-seña .detalle-container h2 {
+.detalle-container h1 {
     color: var(--text);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.page-detalle-seña .detalle-container img {
+.detalle-container img {
     max-width: 100%;
     height: auto;
     border: 5px solid var(--accent);
@@ -286,15 +303,14 @@ header.topbar a.btn-volver {
     background: #0e1726;
 }
 
-.page-detalle-seña .detalle-container p {
+.detalle-container p {
     font-size: 1.1em;
     color: var(--muted);
     margin-bottom: 30px;
-    text-align: center;
 }
 
 /* Botón volver */
-header.topbar a.btn-volver {
+.btn-volver {
     display: inline-block;
     background-color: var(--accent);
     color: #06290f;
@@ -305,7 +321,8 @@ header.topbar a.btn-volver {
     transition: background-color 0.2s, transform 0.2s;
 }
 
-header.topbar a.btn-volver:hover {
+.btn-volver:hover {
     background-color: #16a34a; /* Verde más oscuro */
     transform: translateY(-2px);
 }
+
