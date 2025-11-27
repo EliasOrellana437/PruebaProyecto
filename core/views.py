@@ -22,3 +22,8 @@ def retos_diarios_view(request):
     return render(request, 'core/retos_diarios.html')
 {'slug': 'retos-diarios', 'title': 'Retos diarios', 'desc': 'Pequeños objetivos gamificados.'},
 
+def frases_utiles(request):
+    return render(request, 'core/frases_utiles.html', {
+        'titulo': 'Frases útiles',
+        'descripcion': 'Aprende y practica frases cotidianas con señas.',
+    })

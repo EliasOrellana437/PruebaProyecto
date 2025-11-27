@@ -80,5 +80,35 @@ header.topbar a.btn-volver {
   color: var(--text);
 }
 
+/* Apartado: Frases útiles */
+.frases-box {
+  display: grid;
+  gap: 16px;
+}
+
+.frase-item {
+  display: grid;
+  gap: 12px;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.frase-imagen {
+  display: flex;
+  justify-content: center;
+}
+
+.frase-imagen img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+}
+
+.frase-descripcion, .frase-desafio {
+  color: var(--muted);
+  line-height: 1.5;
+}
 
 

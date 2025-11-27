@@ -9,7 +9,7 @@
 <body class="page page-menu">
   <header class="topbar">
     <h1>Proyecto SignBridge</h1>
-    <div class="user">Hola, {{ username }}</div>
+    <div class="user">Hola,  {{  username }}</div>
   </header>
 
   <main class="grid">
@@ -27,6 +27,12 @@
         </a>
       {% endif %}
     {% endfor %}
+
+    <!-- NUEVO BOTÓN: Frases útiles -->
+    <a href="/frases/" class="tile" data-slug="frases-utiles">
+      <h2>Frases útiles</h2>
+      <p>Aprende y practica frases cotidianas con señas.</p>
+    </a>
   </main>
 
   <!-- El script va justo antes de cerrar el body -->
