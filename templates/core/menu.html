@@ -4,38 +4,42 @@
   {% load static %}
   <meta charset="UTF-8">
   <title>Proyecto SignBridge — Menú</title>
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=110">
 </head>
 <body class="page page-menu">
   <header class="topbar">
     <h1>Proyecto SignBridge</h1>
-    <div class="user">Hola,  {{ username }}</div>
+    <div class="user">Hola, {{ username }}</div>
   </header>
- 
-  <!-- NUEVO BOTÓN: retos diarios -->
-  <main class="grid">
-    {% for opt in options %}
-      {% if opt.slug == "retos-diarios" %}
-        <a href="/retos-diarios/" class="tile" data-slug="{{ opt.slug }}">
-          <h2>{{ opt.title }}</h2>
-          <p>{{ opt.desc }}</p>
-        </a>
-      {% else %}
-        <a href="#" class="tile fake-link" data-slug="{{ opt.slug }}">
-          <h2>{{ opt.title }}</h2>
-          <p>{{ opt.desc }}</p>
-          <span class="badge">Próximamente</span>
-        </a>
-      {% endif %}
-    {% endfor %}
 
-    <!-- NUEVO BOTÓN: Frases útiles -->
+  <main class="grid">
+    <!-- Lección básica: alfabeto (Próximamente) -->
+    <a href="#" class="tile fake-link" data-slug="alfabeto">
+      <h2>Lección básica: alfabeto</h2>
+      <p>Aprende A–Z con gestos.</p>
+      <span class="badge">Próximamente</span>
+    </a>
+
+    <!-- Práctica de números (Próximamente) -->
+    <a href="#" class="tile fake-link" data-slug="numeros">
+      <h2>Práctica de números</h2>
+      <p>Del 0 al 9 en LSC/ASL.</p>
+      <span class="badge">Próximamente</span>
+    </a>
+
+    <!-- Retos diarios -->
+    <a href="/retos-diarios/" class="tile" data-slug="retos-diarios">
+      <h2>Retos diarios</h2>
+      <p>Pequeños objetivos gamificados.</p>
+    </a>
+
+    <!-- Frases útiles -->
     <a href="/frases/" class="tile" data-slug="frases-utiles">
       <h2>Frases útiles</h2>
       <p>Aprende y practica frases cotidianas con señas.</p>
     </a>
 
-    <!-- NUEVO BOTÓN: Mini juego de memoria -->
+    <!-- Mini juego de memoria -->
     <a href="/mini-juego/" class="tile" data-slug="mini-juego">
       <h2>Mini juego de memoria</h2>
       <p>¿Qué gesto representa esta letra o frase?</p>
@@ -45,3 +49,4 @@
   <script src="{% static 'js/menu.js' %}?v=10"></script>
 </body>
 </html>
+
