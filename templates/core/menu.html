@@ -9,9 +9,10 @@
 <body class="page page-menu">
   <header class="topbar">
     <h1>Proyecto SignBridge</h1>
-    <div class="user">Hola,  {{  username }}</div>
+    <div class="user">Hola,  {{ username }}</div>
   </header>
-
+ 
+  <!-- NUEVO BOTÓN: retos diarios -->
   <main class="grid">
     {% for opt in options %}
       {% if opt.slug == "retos-diarios" %}
@@ -29,15 +30,18 @@
     {% endfor %}
 
     <!-- NUEVO BOTÓN: Frases útiles -->
-<a href="/frases/" class="tile" data-slug="frases-utiles">
-  <h2>Frases útiles</h2>
-  <p>Aprende y practica frases cotidianas con señas.</p>
-</a>
+    <a href="/frases/" class="tile" data-slug="frases-utiles">
+      <h2>Frases útiles</h2>
+      <p>Aprende y practica frases cotidianas con señas.</p>
+    </a>
+
+    <!-- NUEVO BOTÓN: Mini juego de memoria -->
+    <a href="/mini-juego/" class="tile" data-slug="mini-juego">
+      <h2>Mini juego de memoria</h2>
+      <p>¿Qué gesto representa esta letra o frase?</p>
+    </a>
   </main>
 
-  <!-- El script va justo antes de cerrar el body -->
- <script src="{% static 'js/menu.js' %}?v=10"></script>
-
-
+  <script src="{% static 'js/menu.js' %}?v=10"></script>
 </body>
 </html>
