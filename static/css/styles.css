@@ -80,35 +80,53 @@ header.topbar a.btn-volver {
   color: var(--text);
 }
 
-/* Apartado: Frases útiles */
-.frases-box {
+  /* Apartado: Frases útiles */
+  .frases-catalogo {
   display: grid;
   gap: 16px;
 }
-
-.frase-item {
+.frases-catalogo .grid {
   display: grid;
-  gap: 12px;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.preview {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+.preview img {
+  max-width: 100%;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background: #0e1726;
+}
+
+/* Detalle de frase */
+.page-frase-detalle .frase-box {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
   background: #0b1220;
   border: 1px solid #1f2937;
   border-radius: 12px;
   padding: 16px;
 }
-
-.frase-imagen {
+.frase-media {
   display: flex;
   justify-content: center;
 }
-
-.frase-imagen img {
+.frase-media img {
   max-width: 100%;
   border-radius: 8px;
   border: 1px solid #1f2937;
+  background: #0e1726;
 }
-
-.frase-descripcion, .frase-desafio {
+.frase-info h2, .frase-info h3 {
+  margin: 8px 0;
+}
+.frase-descripcion, .frase-contexto {
   color: var(--muted);
   line-height: 1.5;
 }
-
 

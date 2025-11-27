@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ titulo }}</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=107">
+</head>
+<body class="page page-frase-detalle">
+
+<header class="topbar">
+  <h1>{{ frase.titulo }}</h1>
+  <a href="{% url 'frases' %}" class="btn-volver">← Volver al catálogo</a>
+</header>
+
+<main class="container">
+  <article class="frase-box">
+    <div class="frase-media">
+      <img src="{% static frase.media %}" alt="Seña de '{{ frase.titulo }}'">
+    </div>
+
+    <div class="frase-info">
+      <h2>Explicación</h2>
+      <p class="frase-descripcion">{{ frase.explicacion }}</p>
+
+      <h3>Contexto de uso</h3>
+      <p class="frase-contexto">{{ frase.contexto }}</p>
+    </div>
+  </article>
+</main>
+
+</body>
+</html>

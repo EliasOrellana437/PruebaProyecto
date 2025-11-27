@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ titulo }}</title>
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=103">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=106">
 </head>
 <body class="page page-frases">
 
@@ -14,25 +14,23 @@
 </header>
 
 <main class="container">
-  <section class="frases-box">
-    <h2>Introducción</h2>
+  <section class="frases-catalogo">
+    <h2>Explora frases</h2>
     <p class="note">{{ descripcion }}</p>
 
-    <div class="frase-item">
-      <h3>Ejemplo: “Gracias”</h3>
-      <div class="frase-imagen">
-        <img src="{% static 'img/reto_gracias.png' %}" alt="Seña de 'Gracias' en lenguaje de señas">
-      </div>
-      <p class="frase-descripcion">
-        Observa el gesto: la mano parte desde la boca y se proyecta hacia afuera.
-      </p>
-      <p class="frase-desafio">
-        Desafío: Úsala hoy para agradecer a alguien.
-      </p>
+    <div class="grid">
+      {% for f in frases %}
+        <a href="{% url 'frase_detalle' f.slug %}" class="tile">
+          <h3>{{ f.titulo }}</h3>
+          <p>{{ f.descripcion }}</p>
+
+          <div class="preview">
+            <img src="{% static f.media %}" alt="Vista previa de {{ f.titulo }}">
+          </div>
+        </a>
+      {% endfor %}
     </div>
   </section>
 </main>
-
-<script src="{% static 'js/frases.js' %}?v=1"></script>
 </body>
 </html>
