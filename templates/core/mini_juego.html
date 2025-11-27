@@ -14,7 +14,8 @@
 </header>
 
 <main class="container">
-  <section id="quiz-container">
+  <!-- Agregamos class="grid" -->
+  <section id="quiz-container" class="grid">
     {% for p in preguntas %}
       <div class="quiz-item" data-respuesta="{{ p.respuesta }}">
         <h3>¿Qué representa esta seña?</h3>

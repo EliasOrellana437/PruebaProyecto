@@ -13,8 +13,10 @@
         <a href="/menu/" class="btn-volver">Volver al menú</a>
     </header>
 
-    <main class="container">
-        <section class="reto-box">
+<main class="container">
+    <!-- Agregamos class="grid" -->
+    <section class="grid">
+        <div class="reto-box">
             <h2>Frase de hoy: “Gracias”</h2>
 
             <div class="reto-imagen">
@@ -31,8 +33,10 @@
             </button>
 
             <p id="mensaje-reto" class="reto-mensaje"></p>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
+
 
     <script src="{% static 'js/reto_diario.js' %}?v=1"></script>
 </body>

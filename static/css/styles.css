@@ -41,6 +41,12 @@ header.topbar a.btn-volver {
   display: grid;
   gap: 16px;
 }
+/* Layout en menú para retos diarios */
+.page-retos .grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
 
 .reto-imagen {
   display: flex;
@@ -88,7 +94,15 @@ header.topbar a.btn-volver {
 .frases-catalogo .grid {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* Esto acomoda varias frases por fila */
+}
+.tile {
+  transition: transform 0.2s ease;
+}
+.tile:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
 }
 .preview {
   margin-top: 8px;
@@ -137,6 +151,12 @@ header.topbar a.btn-volver {
   border: 1px solid #1f2937;
   border-radius: 12px;
   background: #0b1220;
+}
+/* Layout en menú para mini juegos */
+.page-mini-juego .grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .quiz-media {
