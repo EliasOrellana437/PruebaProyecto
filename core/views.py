@@ -107,3 +107,32 @@ def mini_juego(request):
         "titulo": "Mini juego de memoria",
         "preguntas": preguntas,
     })
+
+# Lista de todas las letras del alfabeto (útil para el índice)
+ALFABETO = [
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
+    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+]
+
+# Vista 1: Muestra el índice (la lista de enlaces A, B, C...)
+def alfabeto_view(request):
+    contexto = {
+        'titulo_pagina': 'Índice del Alfabeto',
+        'letras': ALFABETO, # Enviamos la lista completa al template
+    }
+    # ¡Aquí le decimos que use el template que acabas de crear!
+    return render(request, 'leccion_alfabeto/alfabeto_index.html', contexto)
+
+
+# Vista 2: Muestra el detalle de una seña (la imagen)
+def detalle_seña_view(request, letra):
+    # Asegúrate de que esta extensión coincida con tus archivos (ej: A.jpg)
+    ruta_imagen = f"señas/{letra}.jpg" 
+    
+    contexto = {
+        'letra': letra,
+        'ruta_imagen': ruta_imagen,
+        'titulo_pagina': f"Seña de la Letra {letra}"
+    }
+    
+    return render(request, 'leccion_alfabeto/detalle_seña.html', contexto)
