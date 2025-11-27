@@ -121,7 +121,8 @@ def alfabeto_view(request):
         'letras': ALFABETO, # Enviamos la lista completa al template
     }
     # ¡Aquí le decimos que use el template que acabas de crear!
-    return render(request, 'leccion_alfabeto/alfabeto_index.html', contexto)
+    return render(request, 'core/alfabeto_index.html', contexto)
+
 
 
 # Vista 2: Muestra el detalle de una seña (la imagen)
@@ -135,4 +136,4 @@ def detalle_seña_view(request, letra):
         'titulo_pagina': f"Seña de la Letra {letra}"
     }
     
-    return render(request, 'leccion_alfabeto/detalle_seña.html', contexto)
+    return render(request, 'core/detalle_seña.html', contexto)
