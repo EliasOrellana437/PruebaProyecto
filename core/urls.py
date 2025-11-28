@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
     path('', views.login_view, name='login'),
     path('menu/', views.menu_view, name='menu'),
@@ -17,4 +18,9 @@ path('mini-juego/', views.mini_juego, name='mini_juego'),
     # URL de detalle (Muestra la imagen)
     # <str:letra> captura la letra de la A a la Z
     path('alfabeto/<str:letra>/', views.detalle_seña_view, name='detalle_seña'),
+
+
+ # Números
+    path('numeros/', views.numeros_view, name='numeros'),
+    path('numeros/<int:numero>/', views.numeros_senal_view, name='numeros_senal'),
 ]

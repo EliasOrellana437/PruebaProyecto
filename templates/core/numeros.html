@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo_pagina }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=110">
+</head>
+<body class="page page-numeros">
+
+  <header class="topbar">
+    <img src="{% static 'img/logo_signbridge.png' %}" alt="Logo SignBridge" class="logo">
+    <h1>{{ titulo_pagina }}</h1>
+    <div class="user">Hola, {{ username }}</div>
+  </header>
+
+  <main class="container-wide">
+    <div class="titulo-seccion">
+      <h1>Índice de Números</h1>
+      <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
+    </div>
+
+    <h2>Selecciona un número para ver la seña</h2>
+
+    <div class="letras-container grid">
+      {% for numero in numeros %}
+        <a href="{% url 'numeros_senal' numero=numero %}" class="letra-btn numero-btn">
+          {{ numero }}
+        </a>
+      {% endfor %}
+    </div>
+  </main>
+
+</body>
+</html>

@@ -376,3 +376,26 @@ def detalle_seña_view(request, letra):
     }
     
     return render(request, 'core/detalle_seña.html', contexto)
+
+#para los numeros
+def numeros_view(request):
+    titulo_pagina = "Números en Lengua de Señas"
+    username = getattr(request.user, "username", "Invitado")
+    numeros = list(range(1, 11))
+    return render(request, "numeros.html", {
+        "titulo_pagina": titulo_pagina,
+        "username": username,
+        "numeros": numeros,
+        "descripcion": "Selecciona un número para ver su seña."
+    })
+
+def numeros_senal_view(request, numero):
+    titulo_pagina = "Detalle del número"
+    username = getattr(request.user, "username", "Invitado")
+    ruta_imagen = f"img/numeros/{numero}.gif"
+    return render(request, "numeros_senal.html", {
+        "titulo_pagina": titulo_pagina,
+        "username": username,
+        "numero": numero,
+        "ruta_imagen": ruta_imagen
+    })
