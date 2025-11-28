@@ -133,14 +133,75 @@ header.topbar a.btn-volver {
 /* ============================= */
 /* Reto diario */
 /* ============================= */
-.reto-box { display: grid; gap: 16px; }
-.page-retos .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.reto-imagen { display: flex; justify-content: center; }
-.reto-imagen img { max-width: 100%; border-radius: 8px; border: 1px solid #1f2937; }
-.reto-descripcion { color: var(--muted); line-height: 1.5; }
-.btn-reto { padding: 10px 14px; background: var(--accent); color: #06290f; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; width: 100%; }
-.btn-reto:disabled { background: #1f2937; color: var(--muted); cursor: not-allowed; }
-.reto-mensaje { font-size: 14px; color: var(--text); }
+.page-retos .grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding: 20px; /*  añadido para dar aire como en frases y alfabeto */
+}
+
+.reto-box {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  background: #0b1220;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /*  sombra uniforme */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reto-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5); /*  sombra verde al hover */
+}
+
+.reto-imagen {
+  display: flex;
+  justify-content: center;
+}
+
+.reto-imagen img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  background: #0e1726; /*  añadido para coherencia con frases y alfabeto */
+}
+
+.reto-descripcion {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.btn-reto {
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #06290f;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s, transform 0.2s; /*  hover suave */
+}
+
+.btn-reto:hover:not(:disabled) {
+  background-color: #16a34a; /*  verde más oscuro al hover */
+  transform: translateY(-2px);
+}
+
+.btn-reto:disabled {
+  background: #1f2937;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.reto-mensaje {
+  font-size: 14px;
+  color: var(--text);
+  text-align: center; /*  centrado para mejor estética */
+}
+
 
 /* ============================= */
 /* Frases útiles */
@@ -165,14 +226,14 @@ header.topbar a.btn-volver {
   border: 1px solid #1f2937;
   color: var(--text);
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* ✅ sombra uniforme */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /*  sombra uniforme */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tile:hover {
   transform: translateY(-4px) scale(1.05);
   border-color: var(--accent);
-  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5); /* ✅ sombra verde al hover */
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5); /*  sombra verde al hover */
 }
 
 .preview {
@@ -183,7 +244,7 @@ header.topbar a.btn-volver {
 
 .preview img {
   max-width: 100%;
-  border-radius: 8px; /* ✅ igual que mini juego */
+  border-radius: 8px; /*  igual que mini juego */
   border: 1px solid #1f2937;
   background: #0e1726;
 }
@@ -252,13 +313,13 @@ header.topbar a.btn-volver {
   border: 1px solid #1f2937;
   border-radius: 12px;
   background: #0b1220;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* ✅ añadido para estética uniforme */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* ✅ hover suave */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* añadido para estética uniforme */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /*  hover suave */
 }
 
 .quiz-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5); /* ✅ sombra verde al hover */
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5); /* sombra verde al hover */
 }
 
 .quiz-media {
@@ -286,12 +347,12 @@ header.topbar a.btn-volver {
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  color: #06290f; /* ✅ contraste como en botones del alfabeto */
+  color: #06290f; /* contraste como en botones del alfabeto */
   transition: background-color 0.2s, transform 0.2s;
 }
 
 .quiz-btn:hover:not(:disabled) {
-  background-color: #16a34a; /* ✅ verde más oscuro al hover */
+  background-color: #16a34a; /*  verde más oscuro al hover */
   transform: translateY(-2px);
 }
 
@@ -329,7 +390,7 @@ header.topbar a.btn-volver {
   align-items: center;
   width: 70px;
   height: 70px;
-  border: 2px solid var(--muted); /* ✅ corregido */
+  border: 2px solid var(--muted); /* corregido */
   border-radius: 10px;
   background-color: #0b1220;
   text-decoration: none;

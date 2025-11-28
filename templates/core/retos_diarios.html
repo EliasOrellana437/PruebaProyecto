@@ -1,43 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <title>Reto diario</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=1001">
 </head>
 <body class="page page-retos">
 
-    <header class="topbar">
-        <h1>Reto diario</h1>
-        <a href="/menu/" class="btn-volver">Volver al menú</a>
-    </header>
+  <header class="topbar">
+    <img src="{% static 'img/logo_signbridge.png' %}" alt="Logo SignBridge" class="logo">
+    <h1>Reto diario</h1>
+    <div class="user">Hola, {{ username }}</div>
+  </header>
 
-<main class="container-wide">
-    <!-- Agregamos class="grid" -->
+  <main class="container-wide">
+    <div class="titulo-seccion">
+      <h1>Reto diario</h1>
+      <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
+    </div>
+
     <section class="grid">
-        <div class="reto-box">
-            <h2>Frase de hoy: “Gracias”</h2>
+      <div class="reto-box">
+        <h2>Frase de hoy: “Gracias”</h2>
 
-            <div class="reto-imagen">
-                <img src="{% static 'img/reto_gracias.png' %}" alt="Seña de 'Gracias' en lenguaje de señas">
-            </div>
-
-            <p class="reto-descripcion">
-                Observa el gesto: la mano parte desde la boca y se proyecta hacia afuera.
-                Practica la seña de “Gracias” varias veces y trata de usarla hoy con alguien que te haya ayudado.
-            </p>
-
-            <button id="btn-completar-reto" class="btn-reto">
-                Marcar como completado
-            </button>
-
-            <p id="mensaje-reto" class="reto-mensaje"></p>
+        <div class="reto-imagen">
+          <img src="{% static 'img/reto_gracias.png' %}" alt="Seña de 'Gracias' en lenguaje de señas">
         </div>
+
+        <p class="reto-descripcion">
+          Observa el gesto: la mano parte desde la boca y se proyecta hacia afuera.
+          Practica la seña de “Gracias” varias veces y trata de usarla hoy con alguien que te haya ayudado.
+        </p>
+
+        <button id="btn-completar-reto" class="btn-reto">
+          Marcar como completado
+        </button>
+
+        <p id="mensaje-reto" class="reto-mensaje"></p>
+      </div>
     </section>
-</main>
+  </main>
 
-
-    <script src="{% static 'js/reto_diario.js' %}?v=1"></script>
+  <script src="{% static 'js/reto_diario.js' %}?v=1"></script>
 </body>
 </html>
