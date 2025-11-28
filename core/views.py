@@ -393,7 +393,7 @@ def numeros_senal_view(request, numero):
     titulo_pagina = "Detalle del número"
     username = getattr(request.user, "username", "Invitado")
     ruta_imagen = f"img/numeros/{numero}.gif"
-    return render(request, "core/numeros_senal.html", {
+    return render(request, "core/numeros_señal.html", {
         "titulo_pagina": titulo_pagina,
         "username": username,
         "numero": numero,
