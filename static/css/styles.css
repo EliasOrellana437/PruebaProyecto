@@ -201,3 +201,31 @@ header.topbar a.btn-volver {
   height: 70px;
   border: 2px solid
   }
+  .titulo-seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.titulo-seccion h1 {
+  margin: 0;
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+.titulo-seccion .btn-volver {
+  background-color: var(--accent);
+  color: #06290f;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.titulo-seccion .btn-volver:hover {
+  background-color: #16a34a;
+  transform: translateY(-2px);
+}
