@@ -17,5 +17,4 @@ path('mini-juego/', views.mini_juego, name='mini_juego'),
     # URL de detalle (Muestra la imagen)
     # <str:letra> captura la letra de la A a la Z
     path('alfabeto/<str:letra>/', views.detalle_seña_view, name='detalle_seña'),
-
 ]

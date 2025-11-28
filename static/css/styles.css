@@ -145,12 +145,81 @@ header.topbar a.btn-volver {
 /* ============================= */
 /* Frases útiles */
 /* ============================= */
-.frases-catalogo { display: grid; gap: 16px; }
-.frases-catalogo .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-.tile { transition: transform 0.2s ease; }
-.tile:hover { transform: scale(1.05); border-color: var(--accent); }
-.preview { margin-top: 8px; display: flex; justify-content: center; }
-.preview img { max-width: 100%; border-radius: 6px; border: 1px solid #1f2937; background: #0e1726; }
+.frases-catalogo {
+  display: grid;
+  gap: 16px;
+}
+
+.frases-catalogo .grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 20px; /* ✅ añadido para dar aire como en alfabeto */
+}
+
+.tile {
+  display: block;
+  padding: 16px;
+  border-radius: 12px;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* ✅ sombra uniforme */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tile:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: var(--accent);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5); /* ✅ sombra verde al hover */
+}
+
+.preview {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.preview img {
+  max-width: 100%;
+  border-radius: 8px; /* ✅ igual que mini juego */
+  border: 1px solid #1f2937;
+  background: #0e1726;
+}
+
+/* ============================= */
+/* Título y botón volver */
+/* ============================= */
+.titulo-seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.titulo-seccion h1 {
+  margin: 0;
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+.titulo-seccion .btn-volver {
+  background-color: var(--accent);
+  color: #06290f;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.titulo-seccion .btn-volver:hover {
+  background-color: #16a34a;
+  transform: translateY(-2px);
+}
+
 
 /* Detalle de frase */
 .page-frase-detalle .frase-box {
@@ -170,14 +239,74 @@ header.topbar a.btn-volver {
 /* ============================= */
 /* Mini juegos */
 /* ============================= */
-.quiz-item { margin-bottom: 24px; padding: 16px; border: 1px solid #1f2937; border-radius: 12px; background: #0b1220; }
-.page-mini-juego .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.quiz-media { display: flex; justify-content: center; margin: 12px 0; }
-.quiz-media img { max-width: 200px; border-radius: 8px; border: 1px solid #1f2937; }
-.quiz-opciones { display: flex; gap: 12px; justify-content: center; }
-.quiz-btn { padding: 8px 12px; background: var(--accent); border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
-.quiz-btn:disabled { background: #1f2937; color: var(--muted); cursor: not-allowed; }
-.quiz-feedback { margin-top: 8px; text-align: center; font-weight: bold; }
+.page-mini-juego .grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 20px;
+}
+
+.quiz-item {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  background: #0b1220;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* ✅ añadido para estética uniforme */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* ✅ hover suave */
+}
+
+.quiz-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5); /* ✅ sombra verde al hover */
+}
+
+.quiz-media {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.quiz-media img {
+  max-width: 200px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+}
+
+.quiz-opciones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.quiz-btn {
+  padding: 8px 12px;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #06290f; /* ✅ contraste como en botones del alfabeto */
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.quiz-btn:hover:not(:disabled) {
+  background-color: #16a34a; /* ✅ verde más oscuro al hover */
+  transform: translateY(-2px);
+}
+
+.quiz-btn:disabled {
+  background: #1f2937;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.quiz-feedback {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--text);
+}
 
 /* ============================= */
 /* Alfabeto */

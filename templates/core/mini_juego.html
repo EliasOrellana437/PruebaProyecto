@@ -8,31 +8,37 @@
 </head>
 <body class="page page-mini-juego">
 
-<header class="topbar">
-  <h1>{{ titulo }}</h1>
-  <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
-</header>
+  <header class="topbar">
+    <img src="{% static 'img/logo_signbridge.png' %}" alt="Logo SignBridge" class="logo">
+    <h1>{{ titulo }}</h1>
+    <div class="user">Hola, {{ username }}</div>
+  </header>
 
-<main class="container-wide">
-  <!-- Agregamos class="grid" -->
-  <section id="quiz-container" class="grid">
-    {% for p in preguntas %}
-      <div class="quiz-item" data-respuesta="{{ p.respuesta }}">
-        <h3>¿Qué representa esta seña?</h3>
-        <div class="quiz-media">
-          <img src="{% static p.media %}" alt="Seña de {{ p.titulo }}">
-        </div>
-        <div class="quiz-opciones">
-          {% for opt in p.opciones %}
-            <button class="quiz-btn">{{ opt }}</button>
-          {% endfor %}
-        </div>
-        <p class="quiz-feedback"></p>
-      </div>
-    {% endfor %}
-  </section>
-</main>
+  <main class="container-wide">
+    <div class="titulo-seccion">
+      <h1>Mini juego de memoria</h1>
+      <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
+    </div>
 
-<script src="{% static 'js/mini_juego.js' %}?v=1"></script>
+    <h2>¿Qué representa esta seña?</h2>
+
+    <section id="quiz-container" class="grid">
+      {% for p in preguntas %}
+        <div class="quiz-item" data-respuesta="{{ p.respuesta }}">
+          <div class="quiz-media">
+            <img src="{% static p.media %}" alt="Seña de {{ p.titulo }}">
+          </div>
+          <div class="quiz-opciones">
+            {% for opt in p.opciones %}
+              <button class="quiz-btn">{{ opt }}</button>
+            {% endfor %}
+          </div>
+          <p class="quiz-feedback"></p>
+        </div>
+      {% endfor %}
+    </section>
+  </main>
+
+  <script src="{% static 'js/mini_juego.js' %}?v=1"></script>
 </body>
 </html>

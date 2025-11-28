@@ -8,29 +8,36 @@
 </head>
 <body class="page page-frases">
 
-<header class="topbar">
-  <h1>{{ titulo }}</h1>
-  <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
-</header>
+  <header class="topbar">
+    <img src="{% static 'img/logo_signbridge.png' %}" alt="Logo SignBridge" class="logo">
+    <h1>{{ titulo }}</h1>
+    <div class="user">Hola, {{ username }}</div>
+  </header>
 
-<main class="container-wide">
-  <section class="frases-catalogo">
-    <h2>Explora frases</h2>
-    <p class="note">{{ descripcion }}</p>
-
-    <div class="grid">
-      {% for f in frases %}
-        <a href="{% url 'frase_detalle' f.slug %}" class="tile">
-          <h3>{{ f.titulo }}</h3>
-          <p>{{ f.descripcion }}</p>
-
-          <div class="preview">
-            <img src="{% static f.media %}" alt="Vista previa de {{ f.titulo }}">
-          </div>
-        </a>
-      {% endfor %}
+  <main class="container-wide">
+    <div class="titulo-seccion">
+      <h1>Frases útiles</h1>
+      <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
     </div>
-  </section>
-</main>
+
+    <section class="frases-catalogo">
+      <h2>Explora frases</h2>
+      <p class="note">{{ descripcion }}</p>
+
+      <div class="grid">
+        {% for f in frases %}
+          <a href="{% url 'frase_detalle' f.slug %}" class="tile">
+            <h3>{{ f.titulo }}</h3>
+            <p>{{ f.descripcion }}</p>
+
+            <div class="preview">
+              <img src="{% static f.media %}" alt="Vista previa de {{ f.titulo }}">
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
 </body>
 </html>
