@@ -9,15 +9,17 @@
 <body class="page page-alfabeto">
 
     <header class="topbar">
+        <img src="{% static 'img/logo_signbridge.png' %}" alt="Logo SignBridge" class="logo">
         <h1>{{ titulo_pagina }}</h1>
-        <div class="titulo-seccion">
-  <h1>Índice del Alfabeto</h1>
-  <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
-</div>
-
+        <div class="user">Hola, {{ username }}</div>
     </header>
 
     <main class="container-wide">
+        <div class="titulo-seccion">
+            <h1>Índice del Alfabeto</h1>
+            <a href="{% url 'menu' %}" class="btn-volver">Volver al menú</a>
+        </div>
+
         <h2>Selecciona una letra para ver la seña</h2>
 
         <div class="letras-container grid">
@@ -31,3 +33,4 @@
 
 </body>
 </html>
+
