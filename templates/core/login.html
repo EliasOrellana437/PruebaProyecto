@@ -2,6 +2,11 @@
 <html lang="es">
 <head>
   {% load static %}
+  <header class="topbar">
+  <img src="{% static 'img/logo_signbridge.png' %}" alt="Logo SignBridge" class="logo">
+  <h1>Proyecto SignBridge</h1>
+  <div class="user">Hola, {{ username }}</div>
+</header>
   <meta charset="UTF-8">
   <title>PruebaProyecto — Ingreso</title>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
