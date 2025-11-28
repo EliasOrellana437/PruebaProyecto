@@ -392,8 +392,9 @@ def numeros_view(request):
 def numeros_senal_view(request, numero):
     titulo_pagina = "Detalle del número"
     username = getattr(request.user, "username", "Invitado")
-    ruta_imagen = f"img/numeros/{numero}.jpg"
-    return render(request, "core/numeros_señal.html", {
+    # Ajustamos la ruta para que coincida con tus archivos .png
+    ruta_imagen = f"img/numeros/numero{numero}.png"
+    return render(request, "core/numeros_senal.html", {
         "titulo_pagina": titulo_pagina,
         "username": username,
         "numero": numero,
