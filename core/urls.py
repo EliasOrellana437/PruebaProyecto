@@ -23,5 +23,4 @@ path('mini-juego/', views.mini_juego, name='mini_juego'),
  # Números
 path("numeros/", views.numeros_view, name="numeros"),
 path("numeros/<int:numero>/", views.numeros_senal_view, name="numeros_senal"),
-
 ]
