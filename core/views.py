@@ -2,13 +2,20 @@ from django.shortcuts import render, redirect
 import random
 from django.http import Http404
 
+#se cambio esta onda para tener lo de invitado o registrarse
 def login_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('username', '')
-        # Guardamos el nombre en sesión para mostrarlo en el menú
-        request.session['username'] = username or 'Invitado'
-        return redirect('menu')
-    return render(request, 'core/login.html')  # muestra el formulario
+    if request.method == "POST":
+        modo = request.POST.get("modo")
+        if modo == "invitado":
+            request.session["username"] = "Invitado"
+            return redirect("menu")  # o la vista principal
+        else:
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+            # Aquí irá la validación real con base de datos
+            request.session["username"] = username
+            return redirect("menu")
+    return render(request, "core/login.html")
 
 def menu_view(request):
     username = request.session.get('username', 'Invitado')
@@ -359,7 +366,7 @@ def alfabeto_view(request):
         'titulo_pagina': 'Índice del Alfabeto',
         'letras': ALFABETO, # Enviamos la lista completa al template
     }
-    # ¡Aquí le decimos que use el template que acabas de crear!
+    # Aquí le decimos que use el template que se acaba de crear
     return render(request, 'core/alfabeto_index.html', contexto)
 
 
