@@ -95,14 +95,53 @@ input {
 /* ============================= */
 /* Menú y catálogos */
 /* ============================= */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; padding: 20px; }
-.tile { display: block; padding: 16px; border-radius: 12px; background: #0b1220; border: 1px solid #1f2937; text-decoration: none; color: var(--text); position: relative; }
-.tile:hover { border-color: var(--accent); transform: translateY(-2px); transition: 0.15s ease; }
-.tile h2 { margin: 0 0 8px; font-size: 18px; }
-.tile p { margin: 0; color: var(--muted); }
-.badge { position: absolute; top: 12px; right: 12px; background: #1f2937; color: var(--muted); padding: 4px 8px; border-radius: 999px; font-size: 12px; }
-.tile { pointer-events: auto !important; cursor: pointer; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
 
+.tile {
+  display: block;
+  padding: 16px;
+  border-radius: 12px;
+  background: #0b1220;
+  border: 2px solid #22c55e; /* Borde más visible con color de acento */
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  pointer-events: auto !important;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tile:hover {
+  border-color: #16a34a; /* Verde más brillante al pasar el mouse */
+  box-shadow: 0 0 10px #16a34a;
+  transform: translateY(-2px);
+}
+
+.tile h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.tile p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #1f2937;
+  color: var(--muted);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
 /* Hover con sombra */
 .tile, .quiz-item, .reto-box {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
