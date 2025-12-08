@@ -261,18 +261,6 @@ header.topbar a.btn-volver {
   padding: 20px; /* ✅ añadido para dar aire como en alfabeto */
 }
 
-.frases-catalogo .tile {
-  display: block;
-  padding: 16px;
-  border-radius: 12px;
-  background: #0b1220;
-  border: 1px solid #1f2937;
-  color: var(--text);
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /*  sombra uniforme */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
 .tile:hover {
   transform: translateY(-4px) scale(1.05);
   border-color: var(--accent);
