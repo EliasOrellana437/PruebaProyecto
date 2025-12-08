@@ -107,19 +107,23 @@ input {
   padding: 16px;
   border-radius: 12px;
   background: #0b1220;
-  border: 2px solid rgba(255, 255, 255, 0.35); /* Borde claro visible */
+  border: 2px solid rgba(255, 255, 255, 0.45); /* Borde claro visible */
   text-decoration: none;
   color: var(--text);
   position: relative;
   pointer-events: auto !important;
   cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  transition: 
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 .tile:hover {
-  border-color: #22c55e; /* Verde acento brillante */
-  box-shadow: 0 0 10px #16a34a;
-  transform: translateY(-2px);
+  border-color: var(--accent); /* ✅ Verde acento */
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.6); /* ✅ Sombra verde */
+  transform: translateY(-4px);
 }
 
 .tile h2 {
@@ -257,7 +261,7 @@ header.topbar a.btn-volver {
   padding: 20px; /* ✅ añadido para dar aire como en alfabeto */
 }
 
-.tile {
+.frases-catalogo .tile {
   display: block;
   padding: 16px;
   border-radius: 12px;
