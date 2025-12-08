@@ -107,7 +107,7 @@ input {
   padding: 16px;
   border-radius: 12px;
   background: #0b1220;
-  border: 2px solid rgba(255, 255, 255, 0.45); /* Borde claro visible */
+  border: 2px solid #ffffff !important;
   text-decoration: none;
   color: var(--text);
   position: relative;
@@ -258,7 +258,7 @@ header.topbar a.btn-volver {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  padding: 20px; /* ✅ añadido para dar aire como en alfabeto */
+  padding: 20px; /* añadido para dar aire como en alfabeto */
 }
 
 .tile:hover {
