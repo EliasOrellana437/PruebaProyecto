@@ -107,7 +107,7 @@ input {
   padding: 16px;
   border-radius: 12px;
   background: #0b1220;
-  border: 2px solid #22c55e; /* Borde más visible con color de acento */
+  border: 2px solid rgba(255, 255, 255, 0.35); /* Borde claro visible */
   text-decoration: none;
   color: var(--text);
   position: relative;
@@ -117,7 +117,7 @@ input {
 }
 
 .tile:hover {
-  border-color: #16a34a; /* Verde más brillante al pasar el mouse */
+  border-color: #22c55e; /* Verde acento brillante */
   box-shadow: 0 0 10px #16a34a;
   transform: translateY(-2px);
 }
